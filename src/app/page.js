@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <main
       style={{
-        backgroundColor: '#DEF8EBFF',
+        backgroundColor: '#768FABFF',
       }}
     >
       <Navbar />
@@ -40,26 +40,6 @@ export default function Home() {
             color: 'black',
           }}
           withShadowText
-          contentThirdSection={
-            <div
-              style={{ zIndex: 2 }}
-              className='flex flex-col px-48'
-              id='know-us'
-            >
-              <Typography.Title
-                level={3}
-                className='font-medium mb-10 text-center text-white'
-              >
-                Know Us
-              </Typography.Title>
-              <Missions
-                textColor='#fff'
-                data={dataSite.info}
-                gridColumns={1}
-                variant='text'
-              />
-            </div>
-          }
         />
       </div>
       <div className='container mx-auto flex flex-col gap-20 my-24'>
@@ -69,8 +49,25 @@ export default function Home() {
           </Typography.Title>
           <Features
             gridColumns={2}
-            variant='card'
+            variant='background-img'
             features={dataSite.services}
+            brightness={5}
+            textColor={'#fff'}
+            borderRadius={40}
+          />
+        </div>
+        <div style={{ zIndex: 2 }} className='flex flex-col px-48' id='know-us'>
+          <Typography.Title
+            level={3}
+            className='font-medium mb-10 text-center text-white'
+          >
+            Know Us
+          </Typography.Title>
+          <Missions
+            textColor='#fff'
+            data={dataSite.info}
+            gridColumns={1}
+            variant='text'
           />
         </div>
         <div id='courses'>
@@ -112,9 +109,9 @@ export default function Home() {
             }}
             variantItem='card'
             variant='grid'
-            backgroundColor='#CFE5BAFF'
+            backgroundColor='#84B8EFFF'
             references={dataSite.references}
-            gridColumns={3}
+            gridColumns={1}
             titleAlign='center'
           />
         </div>

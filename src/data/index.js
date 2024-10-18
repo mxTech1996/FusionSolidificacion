@@ -1,5 +1,5 @@
-export const pageName = 'AKWC';
-export const primaryColor = '#000000';
+export const pageName = 'Fusión y Solidificación';
+export const primaryColor = '#11264EFF';
 export const backgroundColor = '#FFFFFF';
 export const makeClearBackground = (color) => {
   return {

@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { navData } from '@/data';
-import { Navbar as NavbarV2, theme } from 'ecommerce-mxtech';
+import { NavbarV2, theme } from 'ecommerce-mxtech';
 import { useInformation } from '@/store/useInformation';
 
 const { useToken } = theme;
@@ -15,8 +15,9 @@ const Navbar = () => {
 
   return (
     <NavbarV2
+      withSearch={false}
       linksProps={{
-        variant: 'underline',
+        variant: 'button',
         align: 'left',
       }}
       textColor='black'
