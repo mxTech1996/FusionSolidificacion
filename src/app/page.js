@@ -35,7 +35,7 @@ export default function Home() {
           description={dataSite.description}
           srcSecondary={dataSite.image_hero2}
           withSubView
-          images={[dataSite.image_hero, dataSite.image_hero2]}
+          // images={[dataSite.image_hero, dataSite.image_hero2]}
           styleTextSecondSection={{
             color: 'black',
           }}
@@ -47,13 +47,10 @@ export default function Home() {
           <Typography.Title level={3} className='font-medium mb-10 text-center'>
             Our Services
           </Typography.Title>
-          <Features
+          <FeaturesV2
             gridColumns={2}
-            variant='background-img'
+            variant='card'
             features={dataSite.services}
-            brightness={5}
-            textColor={'#fff'}
-            borderRadius={40}
           />
         </div>
         <div style={{ zIndex: 2 }} className='flex flex-col px-48' id='know-us'>
@@ -75,13 +72,13 @@ export default function Home() {
             <ProductSection
               withCategoryFilter={false}
               title='All Courses'
-              gridColumns={4}
+              gridColumns={3}
               variant='grid'
               productItemVariant='vertical'
               onClickImage={(id) => {
                 router.push(`/product/${id}`);
               }}
-              productVersion='2'
+              productVersion='1'
               carouselOptions={{
                 arrowColor: 'black',
                 fade: true,
