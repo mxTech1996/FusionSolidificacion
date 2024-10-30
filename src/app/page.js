@@ -18,29 +18,30 @@ export default function Home() {
   const router = useRouter();
   const { dataSite } = useInformation();
 
-  console.log(dataSite);
   return (
     <main
       style={{
         backgroundColor: '#768FABFF',
       }}
     >
-      <Navbar />
+      {dataSite.iconImage && <Navbar />}
       <div className='relative'>
-        <Hero
-          variant='background-img'
-          src={dataSite.image_hero}
-          colorText='#FCFCFCFF'
-          title={dataSite.subtitle}
-          description={dataSite.description}
-          srcSecondary={dataSite.image_hero2}
-          withSubView
-          // images={[dataSite.image_hero, dataSite.image_hero2]}
-          styleTextSecondSection={{
-            color: 'black',
-          }}
-          withShadowText
-        />
+        {dataSite.image_hero && (
+          <Hero
+            variant='background-img'
+            src={dataSite.image_hero}
+            colorText='#FCFCFCFF'
+            title={dataSite.subtitle}
+            description={dataSite.description}
+            srcSecondary={dataSite.image_hero2}
+            withSubView
+            images={[dataSite.image_hero, dataSite.image_hero2]}
+            styleTextSecondSection={{
+              color: 'black',
+            }}
+            withShadowText
+          />
+        )}
       </div>
       <div className='container mx-auto flex flex-col gap-20 my-24'>
         <div className='flex flex-col' id='our-services'>

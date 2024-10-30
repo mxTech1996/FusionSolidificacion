@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { navData } from '@/data';
-import { NavbarV2, theme } from 'ecommerce-mxtech';
+import { Navbar as NavbarV2, theme } from 'ecommerce-mxtech';
 import { useInformation } from '@/store/useInformation';
 
 const { useToken } = theme;
@@ -33,6 +33,7 @@ const Navbar = () => {
       }}
       links={navData}
       onClickProduct={(product) => {
+        console.log('product', product);
         router.push(`/product/${product.id}`);
       }}
       buttonCartProps={{
@@ -41,7 +42,10 @@ const Navbar = () => {
       buttonContactProps={{
         onClick: () => router.push('/more-information'),
       }}
-      onRedirect={(path) => router.push(path)}
+      onRedirect={(path) => {
+        console.log('path', path);
+        router.push(path);
+      }}
       styleHeader={{
         height: 100,
         color: 'black',
